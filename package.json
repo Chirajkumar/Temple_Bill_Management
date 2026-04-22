@@ -1,0 +1,23 @@
+{
+  "name": "temple-management-mern",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend/vite-project"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend/vite-project && npm run dev",
+    "install-all": "npm install && npm run backend:install && npm run frontend:install",
+    "build": "npm run frontend:build",
+    "seed": "cd backend && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
